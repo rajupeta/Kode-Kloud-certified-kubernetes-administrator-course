@@ -116,7 +116,8 @@ Address 1: 10.96.0.10 kube-dns.kube-system.svc.cluster.local
 Name:      10-244-1-4.default.pod.cluster.local
 Address 1: 10.244.1.4 
 ```
-
+k run messaging-cka07-svcn --image alpine -l tier=msg
+k run messaging-cka07-svcn --image=redis:alpine -l tier=msg
 ## Resolve the Service
 
 ```

@@ -1,0 +1,20 @@
+# IMHO must-haves
+
+## create yaml on-the-fly faster
+export do='--dry-run=client -o yaml'
+
+## organize your files per question #
+mkcd() { mkdir -p "$@" && cd "$@" ; }
+
+# nice to haves
+
+## create/destroy from yaml faster
+alias kaf='k apply -f '
+alias kdf='k delete -f '
+
+## namespaces (poor man's `kubens`)
+export nk='-n kube-system'
+export n='-n important-ns' # set this as needed
+
+## destroy things without waiting
+export now='--grace-period 0 --force'

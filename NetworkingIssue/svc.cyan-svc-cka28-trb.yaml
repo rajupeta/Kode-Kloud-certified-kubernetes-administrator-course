@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2024-01-12T13:10:27Z"
+  name: cyan-svc-cka28-trb
+  namespace: cyan-ns-cka28-trb
+  resourceVersion: "3966"
+  uid: 64416bed-a91f-4d49-9654-d47f86961c85
+spec:
+  clusterIP: 10.96.224.54
+  clusterIPs:
+  - 10.96.224.54
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: cyan-app-cka28-trb
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

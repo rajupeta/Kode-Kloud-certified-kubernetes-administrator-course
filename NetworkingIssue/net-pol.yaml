@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  creationTimestamp: "2024-01-12T13:10:28Z"
+  generation: 2
+  name: cyan-np-cka28-trb
+  namespace: cyan-ns-cka28-trb
+  resourceVersion: "3895"
+  uid: 657357d7-fd06-4725-b3cc-70f536f235e6
+spec:
+  egress:
+  - ports:
+    - port: 80
+      protocol: TCP
+    to:
+    - ipBlock:
+        cidr: 0.0.0.0/0
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: default
+    ports:
+    - port: 80
+      protocol: TCP
+  podSelector:
+    matchLabels:
+      app: cyan-white-cka28-trb
+  policyTypes:
+  - Ingress
+  - Egress
+status: {}

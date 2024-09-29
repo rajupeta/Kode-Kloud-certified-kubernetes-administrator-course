@@ -108,6 +108,7 @@
  
      ```
      kubectl run nginx-deploy --image=nginx:1.16 --replicas=1 --record
+     
      kubectl rollout history deployment nginx-deploy
      kubectl set image deployment/nginx-deploy nginx=nginx:1.17 --record
      kubectl rollout history deployment nginx-deploy
@@ -143,6 +144,7 @@
      kubectl create -f deploy.yaml --record
      kubectl rollout history deployment nginx-deploy
      kubectl set image deployment/nginx-deploy nginx=nginx:1.17 --record
+     kubectl set image deployment/nginx-deploy nginx=nginx:1.17 -- record
      kubectl rollout history deployment nginx-deploy
      ```
      </details>
