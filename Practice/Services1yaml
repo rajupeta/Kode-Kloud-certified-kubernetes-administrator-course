@@ -1,0 +1,50 @@
+controlplane ~ ➜  history |cut -c 8-
+k=kubectl
+k get service
+k describe service kubernetes 
+k get deployments.apps 
+k get pods
+k get deployments.apps 
+k describe deployments.apps simple-webapp-deployment 
+k create service --help
+k create service webapp-service --help
+k explain service
+k create sevc --help
+k create svc --help
+k create svc nodePort --help
+k create svc nodeport --help
+k create svc nodeport webapp-service --tcp=8080:8080 --node-port=30080 --selector=name:simple-webapp --dry-run=client -o yaml > simple-webapp-service.yaml
+k create svc nodeport webapp-service --tcp=8080:8080 --node-port=30080 --dry-run=client -o yaml > simple-webapp-service.yaml
+vi simple-webapp-service.yaml 
+k apply -f  simple-webapp-service.yaml 
+vi simple-webapp-service.yaml 
+k apply -f  simple-webapp-service.yaml 
+k describe svc webapp-service 
+vi simple-webapp-service.yaml 
+k apply -f  simple-webapp-service.yaml 
+k describe svc webapp-service 
+vi simple-webapp-service.yaml 
+k apply -f  simple-webapp-service.yaml 
+history |cut -c 8-
+
+
+controlplane ~ ➜  cat simple-webapp-service.yaml 
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    name: webapp-service
+  name: webapp-service
+spec:
+  ports:
+  - name: 8080-8080
+    nodePort: 30080
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    name: simple-webapp
+  type: NodePort
+status:
+  loadBalancer: {}

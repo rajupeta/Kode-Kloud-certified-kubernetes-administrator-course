@@ -1,0 +1,30 @@
+  1  kubectl get pods
+    2  kubectl get rs
+    3  kubectl -n default get deployments.apps 
+    4  kubectl -n default get deployments.apps 
+    5  kubectl -n default get rs
+    6  kubectl -n default get pods
+    7  kubectl describe deployments.apps frontend-deployment 
+    8  kubectl get all
+    9  kubectl describe pod pod/frontend-deployment-577494fd6f-jcrv4
+   10  kubectl describe pod frontend-deployment-577494fd6f-jcrv4
+   11  ls
+   12  kubectl create -f deployment-definition-1.yaml 
+   13  vi deployment-definition-1.yaml 
+   14  vi deployment-definition-1.yaml 
+   15  kubectl expalin deployment
+   16  kubectl explain deployment
+   17  kubectl create -f deployment-definition-1.yaml 
+   18  kubectl create deployment --image= httpd:2.4-alpine httpd-frontend --replicas=3 -o wide > deployment-defintion.yaml
+   19  kubectl create deployment --image=httpd:2.4-alpine httpd-frontend --replicas=3 --drey-run=client -o wide > deployment-defintion.yaml
+   20  kubectl create deployment --image=httpd:2.4-alpine httpd-frontend --replicas=3 --dry-run=client -o wide > deployment-defintion.yaml
+   21  kubectl create deployment --image=httpd:2.4-alpine httpd-frontend --replicas=3 --drey-run=client -o yaml > deployment-defintion.yaml
+   22  kubectl create deployment --image=httpd:2.4-alpine httpd-frontend --replicas=3 --dry-run=client -o yaml > deployment-defintion.yaml
+   23  vi deployment-definition.yaml
+   24  ls
+   25  vi deployment-defintion.yaml
+   26  kubectl create deployment --image=httpd:2.4-alpine httpd-frontend --replicas=3 
+   27  kubctl get all
+   28  kubctl get all
+   29  kubectl get all
+   30  history

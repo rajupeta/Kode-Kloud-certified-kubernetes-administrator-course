@@ -1,0 +1,29 @@
+ 1  kubctl get nodes
+    2  kubectl get nodes
+    3  kubectl get nodes -o wide
+    4  kubectl describe node controlplane 
+    5  ip a
+    6  ip link
+    7  io a | grep -B2 192.29.41.3
+    8  ip a | grep -B2 192.29.41.3
+    9  ip a | grep  192.29.41.3
+   10  ip a | grep -B3 192.29.41.3
+   11  ip link show eth0
+   12  ssh node01
+   13  ip link
+   14  ip address show type bridge  
+   16  ip route
+   17  ip route show default
+   18  netstat -nplt
+   19  netstat
+   20  netstat -nplt
+   21  netstat --help
+   22  netstat -nplt
+   23  netstat -lt
+   24  netstat -pt
+   25  netstat -plt
+   26  netstat -nplt
+   27  netstat --help
+   28  netstat -anp
+   29  netstat -anp |grep etcd
+   30  history

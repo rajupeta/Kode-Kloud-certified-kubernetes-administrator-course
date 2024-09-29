@@ -1,0 +1,60 @@
+controlplane ~ ➜  history |cut -c 8-
+kubectl get all
+ls
+cat curl-test.sh 
+/root/curl-test.sh 
+wget -qO- -T 2  http://webapp-service.default.svc.cluster.local:8080/info 2>&1
+curl -- sh -c 'test=`wget -qO- -T 2  http://webapp-service.default.svc.cluster.local:8080/info 2>&1` && echo "$test OK" || echo "Failed"'
+wget -qO- -T 2  http://webapp-service.default.svc.cluster.local:8080/info 
+wget http://webapp-service.default.svc.cluster.local:8080/info 
+wget -qO- -T 2  http://webapp-service.default.svc.cluster.local:8080/info 
+kubectl get pods
+kubectl describe deployments.apps 
+kubectl get deployments.apps 
+kubectl describe deployments.apps frontend 
+kubectl edit deployments.apps frontend 
+kubectl edit deployments.apps frontend 
+kubectl get deployments.apps 
+kubectl get all
+kubectl get all
+/root/curl-test.sh 
+kubectl edit deployments.apps frontend 
+/root/curl-test.sh 
+kubectl describe deployments.apps frontend 
+kubectl edit deployments.apps frontend 
+kubectl edit deployments.apps frontend 
+kubectl get all
+kubectl get
+kubectl get all
+kubectl get all
+kubectl get all
+/root/curl-test.sh 
+kubectl edit deployments.apps frontend 
+/root/curl-test.sh 
+/root/curl-test.sh 
+/root/curl-test.sh 
+kubectl get all
+alias
+k3s kubectl
+alias
+kubectl
+alias
+vi
+k set image --help
+k describe deployments.apps frontend
+k set image deploy frontend simple-webapp=nginx
+k describe deployments.apps frontend
+k get all
+kubectl edit deployments.apps frontend 
+/root/curl-test.sh 
+k set image deploy frontend simple-webapp=kodekloud/webapp-color:v2
+/root/curl-test.sh 
+k get all
+/root/curl-test.sh 
+k get all
+k set image deploy frontend simple-webapp=kodekloud/webapp-color:v3
+k get all
+k get all
+/root/curl-test.sh 
+kubectl edit deployments.apps frontend 
+history |cut -c 8-

@@ -1,0 +1,25 @@
+k get pods -A
+k get pods 
+k get ns
+k get-context
+k context get-context
+Set current context namespace 
+k config set-context --current  --namespace = default 
+k -n default get deployments.apps 
+k -n default get deployments.apps 
+k -n default get rs
+k -n default get pods
+k describe deployments.apps frontend-deployment 
+k describe pods frontend-deployment-577494fd6f-9fp7l 
+cat deployment-definition-1.yaml 
+k apply -f deployment-definition-1.yaml 
+vi deployment-definition-1.yaml 
+k apply -f deployment-definition-1.yaml 
+k get pods
+k create deployment httpd-frontend --image=httpd:2.4-alpine --replicas 3 -o yaml --dry-run=client > mydeployment.yaml
+cat mydeployment.yaml 
+k create deployment httpd-frontend --image=httpd:2.4-alpine --replicas 3 --namespace=default -o yaml --dry-run=client > mydeployment.yaml
+cat mydeployment.yaml 
+k apply  -f mydeployment.yaml 
+k get all 
+history |cut -c 8-

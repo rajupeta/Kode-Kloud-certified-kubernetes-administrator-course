@@ -1,0 +1,56 @@
+controlplane ~ ➜  history |cut -c 8-
+kubectl get pods
+kubectl describe pod ubuntu-sleeper 
+ls
+vi ubuntu-sleeper-2.yaml 
+kubectl create -f ubuntu-sleeper-2.yaml 
+vi ubuntu-sleeper-3.yaml 
+kubectl create -f ubuntu-sleeper-3.yaml 
+kubectl get pods
+vi ubuntu-sleeper-3.yaml 
+kubectl apply -f ubuntu-sleeper-3.yaml 
+vi ubuntu-sleeper-3.yaml 
+kubectl apply -f ubuntu-sleeper-3.yaml 
+kubectl edit pod ubuntu-sleeper-3
+kubectl replace --force /tmp/kubectl-edit-1898853616.yaml 
+kubectl replace --force -f /tmp/kubectl-edit-1898853616.yaml 
+cat /root/webapp-color
+cat /root/webapp-color/
+cat /root/webapp-color/Dockerfile
+cat /root/webapp-color/Dockerfile2 
+ls
+cd webapp-color-2/
+ls
+cat Dockerfile 
+cat webapp-color-pod.yaml 
+cd ..
+cd webapp-color-3/
+ls
+cat Dockerfile 
+cat webapp-color-pod-2.yaml 
+kubectl run webapp-green --image=kodekloud/webapp-color --dry-run=client -o yaml --color=green >webapp-green.yaml
+kubectl run webapp-green --image=kodekloud/webapp-color --dry-run=client -o yaml >webapp-green.yaml
+vi webapp-green.yaml 
+cat webapp-green.yaml
+kubectl apply -f webapp-green.yaml 
+cd ..
+ls
+cat ubuntu-sleeper-2.yaml 
+help |cut -c 8- 
+history |cut -c 8-
+
+kubectl run webapp-gr --image=nginx -- --color green
+
+Containers:
+  webapp-gr:
+    Container ID:  containerd://0a53df9e345414d160cf72d93eb49ca55a46050a03fb2b76a54378617aacd46a
+    Image:         nginx
+    Image ID:      docker.io/library/nginx@sha256:10d1f5b58f74683ad34eb29287e07dab1e90f10af243f151bb50aa5dbb4d62ee
+    Port:          <none>
+    Host Port:     <none>
+    Args:
+      --color
+      green
+
+ if you pass the command arguments pod will creat even if dry-run is applied.
+ kubectl run webapp-green --image=kodekloud/webapp-color -- --color=green --dry-run=client -o yaml >webapp-green.yaml

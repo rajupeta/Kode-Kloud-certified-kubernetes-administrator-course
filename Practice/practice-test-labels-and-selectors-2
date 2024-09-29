@@ -1,0 +1,19 @@
+    1  kubectl get pods --selector env=dev
+    2  kubectl get pods --selector env=dev --o-headers | wc -l
+    3  kubectl get pods --selector env=dev --no-headers | wc -l
+    4  kubectl get pods --selector env=dev --no-headers 
+    5  kubectl get pods --selector env=dev --no-headers | wc 
+    6  kubectl get pods --selector env=dev  | wc 
+    7  kubectl get pods --selector bu=finance --no-headers
+    8  kubectl get pods --selector bu=finance --no-headers | wc -l
+    9  kubectl get pods --selector env=prod --no-headers |wc -l
+   10  kubectl get all --selector env=prod --no-headers |wc -l
+   11  kubectl get all --selector env=prod 
+   12  kubectl get all --selector env=prod,bu=finance,tier=frontend
+   13  kubectl get pod --selector env=prod,bu=finance,tier=frontend
+   14  ls
+   15  kubectl apply -f replicaset-definition-1.yaml 
+   16  vi replicaset-definition-1.yaml 
+   17  kubectl apply -f replicaset-definition-1.yaml 
+   18  kubectl get pod --watch
+   19  history

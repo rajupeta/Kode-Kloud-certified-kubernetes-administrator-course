@@ -1,0 +1,38 @@
+kubectl get daemonsets.apps -a
+kubectl get daemonsets.apps -A
+kubectl describe daemonsets.apps kube-flannel-ds
+kubectl describe daemonsets kube-flannel-ds
+kubectl --n kube-flannel describe daemonsets kube-flannel-ds 
+kubectl -n kube-flannel describe daemonsets kube-flannel-ds 
+kubectl create deployment elasticsearch --image=registry.k8s.io/fluentd-elasticsearch:1.20 -n kube-system --dry-run=client -o yaml | fluent-daemon.yaml
+kubectl create deployment elasticsearch --image=registry.k8s.io/fluentd-elasticsearch:1.20 -n kube-system --dry-run=client -o yaml >  fluent-daemon.yaml
+controlplane ~ ➜  kubectl create -f fluent-daemon.yaml 
+
+Error from server (BadRequest): error when creating "fluent-daemon.yaml": DaemonSet in version "v1" cannot be handled as a DaemonSet: strict decoding error: unknown field "spec.replicas", unknown field "spec.strategy"
+Change Kind  Deployment to DaemonSet
+Remove unknown field "spec.replicas", unknown field "spec.strategy"
+ cat fluent-daemon.yaml 
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    app: elasticsearch
+  name: elasticsearch
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+      app: elasticsearch
+  template:
+    metadata:
+      labels:
+        app: elasticsearch
+    spec:
+      containers:
+      - image: registry.k8s.io/fluentd-elasticsearch:1.20
+        name: fluentd-elasticsearch
+kubectl create -f fluent-daemon.yaml 
+
+kubectl -A get daemonsets
+kubectl get daemonsets.apps -A 
+history |cut -c 8-

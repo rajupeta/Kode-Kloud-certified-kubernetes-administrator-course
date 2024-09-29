@@ -1,0 +1,14 @@
+controlplane ~ ➜  history |cut -c 8-
+k get ns
+k get ns --no-headers |wc -l
+k -n research get pods
+k -n research get pods --no-headers |wc-l
+k -n research get pods --no-headers |wc -l
+k run redis -n finance --image=redis
+k get pods
+k get pods -n research 
+k get pods -n finance 
+k get pods
+k get pods --all-namespaces 
+k get pods --all-namespaces | grep blue
+history |cut -c 8-

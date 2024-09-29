@@ -1,0 +1,46 @@
+kubectl run simple-pod --image=nginx --dry-run=client -o yaml
+    kubectl get pods
+kubectl run simple-pod --image=nginx --dry-run=client -o yaml
+kubectl run simple-pod --image=nginx --dry-run=client -o yaml>simple-pod.yaml
+kubectl create -f simple-pod.yaml
+kubectl describe pod simple=pod
+kubectl run nginx --image=nginx:latest
+kubectl run nginx3 --image=nginx --dry-run=client -o yaml
+kubectl run nginx3 --image=nginx --dry-run=client o yaml >simple-pod3.yaml
+kubectl create deployment simple-deploy --image=nginx --dry-run=client -o yaml >simple-deployment.yaml
+kubectl create deployment simple-deploy4replica --image=nginx --replicas=4 --dry-run=client -o yaml > simple-deployment-4replicas.yaml
+kubectl scale deployment simple-deploy --replicas=4
+kubectl expose pod simple-pod --port=3555 --name=simple-service --dry-run=client -o yaml> simple-service.yaml
+kubectl get pods --show-labels
+kubectl describe pod simple-pod | grep "Labels"
+kubectl create service clusterip simple-pod --tcp=25:25 --dry-run=client -o yaml >simple-service-label.yaml
+kubectl expose pod nginx --type=NodePort --port=80 name=nginx-service --dry-run=client -o yaml > simple-serive-expose.yaml
+kubectl run nginx-pod --image=nginx:alpine
+kubectl run redis-labels --image=redis:alpine --labels="tier=db"
+kubectl describe pod redis-labels | grep "Labels"
+kubectl get pods --show-labels
+kubectl run redis --image=redis:alpine -o yaml >redis.yaml
+kubectl run redis --image=redis-alpine --dry-run=client -oyaml >redis-alpine.yaml
+kubectl expose pod redis --port=6379 --name=redis-service --type=ClusterIP
+kubectl create deployment webapp --image=kodekloud/webapp-color --replicas=3
+kubectl run custom-nginx --image=nginx --port=8080
+kubectl create ns dev-ns
+kubectl -n dev-ns create deployment redis-deploy --image=redis --replicas=2
+kubectl run httpd --image=httpd:alpine --port=80 --expose
+kubectl run redis --image=redis:alpine --labels="tier=db"
+kubectl expose pod redis --port=6379 --name=redis-service
+kubectl create service clusterip --help
+
+kubectl run nginx --image=nginx
+k=kubectl
+k get pods
+k run nginx1 --image=nginx --dry-run=client -o yaml >> nginx.yaml
+cat nginx.yaml 
+k create deployment --image=nginx --dry-run=client -o yaml > nginxDeployment.yaml
+k create deployment --image=nginx --dry-run=client -o yaml >> nginxDeployment.yaml
+k create deployment nginxDeployment --image=nginx --dry-run=client -o yaml >> nginxDeployment.yaml
+cat nginxDeployment.yaml 
+k create deployment nginxReplicaSet --image=nginx --replicas=4 --dry-run=client -o yaml >nginxDeplReplica.yaml
+cat nginxDeplReplica.yaml 
+history |cut -c 8-
+  

@@ -1,0 +1,22 @@
+k=kubectl
+k get pods
+k get rs
+k get deployments.apps 
+k get deployments.apps 
+k get rs
+k get pods
+k get pods
+k describe deployments.apps frontend-deployment 
+k get pods
+k describe pod frontend-deployment-6469748456-6s4sx 
+k apply -f /root/deployment-definition-1.yaml 
+vi /root/deployment-definition-1.yaml 
+k apply -f /root/deployment-definition-1.yaml 
+kubectl explain deployment | head -n3
+vi /root/deployment-definition-1.yaml 
+k delete deployments.apps deployment-1 
+k explain deployment| head -n3
+k create deployment httpd-frontend --replicas=3 --image=httpd:2.4-alpine --dry-run=client -o yaml >httpd.yaml
+cat httpd.yaml 
+k apply -f httpd.yaml 
+history |cut -c 8-

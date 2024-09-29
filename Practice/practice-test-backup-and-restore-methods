@@ -1,0 +1,20 @@
+-- Back up , make sure suppy certificates etcdctl snapshot--help get cert information and endpoint from cat /etc/kubernetes/manifests/etcd.yaml
+ETCDCTL_API=3 etcdctl --endpoints https://127.0.0.1:2379 --cacert /etc/kubernetes/pki/etcd/ca.crt --key /etc/kubernetes/pki/etcd/server.key --cert /etc/kubernetes/pki/etcd/server.crt snapshot save /opt/snapshot-pre-boot.db
+ETCDCTL_API=3 etcdctl --write-out=table snapshot status /opt/snapshot-pre-boot.db
+k get pods
+k get svc
+k get deployments.apps 
+export ETCDCTL_API=3
+etcdctl --data-dir /opt/snapshot-pre-boot.db snapshot restore snapshot-pre-boot.db
+cat /etc/kubernetes/manifests/etcd.yaml | grep data-dir
+-- Restore
+export ETCDCTL_API=3
+etcdctl --data-dir /var/lib/etcd-new snapshot restore /opt/snapshot-pre-boot.db
+-- update the Volume in /etc/kubernetes/manifests/etcd.yaml to newer location /var/lib/etcd-new
+vi /etc/kubernetes/manifests/etcd.yaml 
+k -n kube-systm get pods
+k -n kube-system get pods
+k get pods
+k get deployments.apps 
+k get svc
+history |cut -c 8-

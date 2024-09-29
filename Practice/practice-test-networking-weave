@@ -1,0 +1,14 @@
+kubectl run busybox --image=busybox -- sleep 1000 --dry-run=client -o yaml >busybox.yaml
+vi busybox.yaml 
+kubectl get pod 
+kubectl delete pod busybox --force
+kubectl run busybox --image=busybox --dry-run=client -o yaml -- sleep 1000 >busybox.yaml
+vi busybox.yaml 
+kubectl apply -f busybox.yaml 
+kubectl get pod
+kubectl exec busybox -- ip a
+kubectl exec busybox -- ip link
+kubectl exec busybox -- ip address
+kubectl exec busybox -- ip route
+cat /etc/cni/net.d/10-weave.conflist 
+history | cut -c 8-

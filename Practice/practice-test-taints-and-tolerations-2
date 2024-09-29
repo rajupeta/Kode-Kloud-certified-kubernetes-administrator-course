@@ -1,0 +1,41 @@
+controlplane ~ ➜  history
+    1  kubectl get nodes
+    2  kubectl get nodes --no-headers |wc -l
+    3  kubectl get node -o wide
+    4  kubectl describe node01 |grep Taint
+    5  kubectl describe node node01 |grep Taint
+    6  kubectl describe node node01 |grep -i Taint 
+    8  kubectl describe node node01 |grep -i Taint
+    9  kubectl describe node node01 |grep Taint
+   10  kubectl taint nodes node01 spray=mortein:NoSchedule
+   11  kubectl describe node node01 |grep Taint
+   12  kubectl describe node node01
+   13  kubectl describe node node01 |grep Taint
+   14  kubectl describe node node01 | grep Taints
+   15  kubectl describe node node01 | grep "Taints: spray"
+   16  kubectl run pod mosquito --image=nginx
+   17  kubectl edit pod mosquito
+   18  kubectl edit pods mosquito
+   19  kubectl run  mosquito --image=nginx
+   20  kubectl edit pod mosquito 
+   22  kubectl get pods
+   23  kubectl describe pod mosquito
+   24  kubectl run bee --image=nginx --dry-run=client -o yaml >bee.yaml
+   2 
+   26   
+   31  vi bee.yaml 
+   32  kubectl apply -f bee.yaml 
+   33  kubectl get pods
+   34  kubectl describe pod bee 
+   36  kubectl taint nodes node01 spary: mortein -
+   
+   40  kubectl get pods
+   41  kubectl describe pod bee
+   42  kubectl get pods
+   43  kubectl describe node controlplane | grep Taint
+ 
+   47  kubectl taint nodes controlplane node-role.kubernets.io/control-plane:NoSchedule- 
+   49  kubectl get pods
+   50  kubectl get pods -o wide
+   51  kubectl taint --help
+   52  history

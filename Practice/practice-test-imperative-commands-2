@@ -1,0 +1,47 @@
+k run nginx-pod --image nginx:alpine
+k get pods
+k describe pod nginx-pod 
+k run redis --image redis:alpine --labels tier=db
+k get pods --show-labels
+k describe pod redis 
+k expose redis --name redis-service --port 6379
+k expose pod redis --name redis-service --port 6379
+k get svc
+k describe svc redis-service 
+k expose deployment webapp --image kodekloud/webapp-color --replicas=3
+k expose deployment webapp --image --help
+k expose deployment webapp  --help
+k create deployment webapp  --image=kodekloud/webapp-color --replicas=3
+k expose deployment webapp 
+k expose deployment --help
+k expose deployment webapp --port 80
+k create service --help
+k run custom-nginx --image nginx --port 8080
+k get pods
+k get pods -o wide
+k describe pod custom-nginx 
+k create dev-ns
+k create ns dev-ns
+k -n dev-ns create deployment --image redis --replicas 2
+k -n dev-ns create deployment redis-deploy --image redis --replicas 2
+k get deployments.apps 
+k get deployments.apps -n dev-ns
+k -n dev-ns get pods
+k run httpd --image httpd:alpine --port 80 --expose
+k get svc
+k describe svc httpd
+k create deployment test --image=nginx --replicas 2 --expose
+k create deployment --help
+k run --help
+k expose pod nginx --type=NodePort --port 80 --name=nginx-service  
+k run pod nginx --image nginx
+k expose pod nginx --type=NodePort --port 80 --name=nginx-service 
+k get pods
+k expose pod nginx-pod --type=NodePort --port 80 --name=nginx-service 
+k describe svc nginx-service  
+k create service nodeport nodeport-service --node-port=30080 --dry-run=client  
+k create service nodeport nodeport-service --tcp 80:80 --node-port=30080 --dry-run=client 
+k get svc
+k create service nodeport nodeport-service --tcp 80:80 --node-port=30080 --dry-run=client -o yaml
+k create service nodeport nginx --tcp 80:80 --node-port=30080 --dry-run=client -o yaml
+history | cut -c 8-

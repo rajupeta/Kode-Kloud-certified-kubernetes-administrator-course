@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: simple-deploy4replica
+  name: simple-deploy4replica
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: simple-deploy4replica
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: simple-deploy4replica
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}

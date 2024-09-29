@@ -1,0 +1,29 @@
+cat < akshay-csr.yaml
+cat > akshay-csr.yaml
+vi akshay-csr.yaml 
+ls
+cat akshay |base64 |tr -d
+cat akshay.csr |base64 |tr -d
+cat akshay.csr | base64 | tr -d
+cat akshay-csr.yaml 
+kubectl apply -f akshay-csr.yaml 
+vi akshay-csr.yaml 
+kubectl apply -f akshay-csr.yaml 
+vi akshay-csr.yaml 
+kubectl apply -f akshay-csr.yaml 
+vi akshay-csr.yaml 
+kubectl apply -f akshay-csr.yaml 
+kubectl get csr
+kubectl certificate approve akshay
+kubectl get csr akshay -o wide
+kubectl get csr akshay -o w
+kubectl get csr
+kubectl get csr agent-smith -o wide
+kubectl get csr agent-smith -o yaml
+kubectl get csr akshay -o yaml
+cat akshay-csr.yaml 
+kubectl get csr akshay -o yaml
+kubectl certificate deny agent-smith
+kubectl get csr
+kubectl delete csr agent-smith 
+history |cut -c 8-

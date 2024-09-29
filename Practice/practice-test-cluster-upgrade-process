@@ -1,0 +1,58 @@
+-- ControlPlane
+k get nodes
+k describe node controlplane 
+k describe node controlplane | grep i taints
+k describe node controlplane | grep -i taints
+k describe node node01 | grep -i taints
+k -n default get deployments.apps 
+k -n default get pods -o wide
+kubeadm upgrade plan
+kubeadm upgrade plan | grep remote
+k drain controlplane 
+k drain controlplane --ignore-daemonsets 
+cat /etc/*release*
+apt update
+apt-cache madison kubeadm
+k get nodes
+apt-mark unhold kubeadm && apt-get update && apt-get install -y kubeadm='1.27.0-*' && apt-mark hold kubeadm
+kubeadm version
+kubeadm upgrade plan
+sudo kubeadm upgrade apply v1.27.0
+k get nodes 
+apt-mark unhold kubelet kubectl && apt-get update && apt-get install -y kubelet='1.27.10-*' kubectl='1.27.10-*' && apt-mark hold kubelet kubectl
+apt-mark unhold kubelet kubectl && apt-get update && apt-get install -y kubelet='1.27.10' kubectl='1.27.10' && apt-mark hold kubelet kubectl
+apt-mark unhold kubelet kubectl && apt-get update && apt-get install -y kubelet='1.27.0' kubectl='1.27.0' && apt-mark hold kubelet kubectl
+apt-mark unhold kubelet kubectl && apt-get update && apt-get install -y kubelet='1.27.0-00' kubectl='1.27.0-00' && apt-mark hold kubelet kubectl
+sudo systemctl daemon-reload
+sudo systemctl restart kubelet
+k get nodes 
+sudo apt-mark hold kubelet kubeadm kubectl
+k get nodes  
+k get nodes 
+k drain node01 --ignore-daemonsets 
+k get nodes 
+k uncordon node01 
+k get nodes
+history |cut -c 8-
+
+
+-- Node upgrade 
+k drain node01
+alias k=kubectl
+k drain node01
+kubeadm version
+kubeadm upgrade plan
+sudo kubeadm upgrade node01 v1.27.0
+sudo kubeadm upgrade node01 
+sudo kubeadm upgrade node
+apt update
+apt-cache madison kubeadm
+apt-mark unhold kubeadm && apt-get update && apt-get install -y kubeadm='1.27.0-*' && apt-mark hold kubeadm
+sudo kubeadm upgrade node 
+apt-mark unhold kubelet kubectl && apt-get update && apt-get install -y kubelet='1.27.0-00' kubectl='1.27.0-00' && apt-mark hold kubelet kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+k get nodes
+k uncordon node01
+sudo systemctl daemon-reload
+sudo systemctl restart kubelet
+history | cut -c 8-

@@ -1,0 +1,61 @@
+   1  kubectl describe  nodes node01 | grep labels
+    2  kubectl describe  nodes node01
+    3  kubectl describe  nodes node01 |grep Labels
+    4  kubectl describe  nodes node01 |grep "Labels"
+    5  kubectl get node node01 --show-labels
+    6  kubectl get node node01 --show-labels |grep "LABELS"
+    7  kubectl get node node01 --show-labels --no-headers
+    8  kubectl describe  nodes node01 |grep -c "Labels"
+    9  kubectl describe  nodes node01 |grep -c Labels:
+   10  kubectl get nodes --selector=kubernetes.io/hostname=node01 --show-labels -o custom-columns=NAME:.metadata.name,LABELS:.metadata.labels | grep count
+   11  kubectl get nodes --selector=kubernetes.io/hostname=node01 --show-labels | grep count
+   12  kubectl get node node01 --template='{{len .metadata.labels}}'
+   13  kubectl get node node01 --template='{{ .metadata.labels}}'
+   14  kubectl get node node01
+   15  kubectl get node node01 -o wide
+   16  kubectl label node node01 color=blue
+   17  kubectl get node node01 --template='{{len .metadata.labels}}'
+   18  kubectl get node node01 --template='{{ .metadata.labels}}'
+   19  kubectl create deployment blue --image=nginx --replicas=3 --dry-run=client -o yaml
+   20  kubectl create deployment blue --image=nginx --replicas=3 
+   21  kubectl describe node controlplane |grep -i taints
+   22  kubectl describe node node01 |grep  taints
+   23  kubectl describe node node01 |grep  -i taints
+   24  kubectl describe node controlplane 
+   25  kubectl edit deployments.apps blue 
+   26  kubectl get pods -o wide
+   27  kubectl create deployment red --image=nginx --replicas=2 --dry-run=client -o yaml > red-deploy.yaml
+   29  kubectl apply -f red-deploy.yaml 
+   34  kubectl get pods -o wide
+   35  history
+   apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: red
+  name: red
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: red
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: red
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                - key: node-role.kubernetes.io/control-plane
+                  operator: Exists
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}

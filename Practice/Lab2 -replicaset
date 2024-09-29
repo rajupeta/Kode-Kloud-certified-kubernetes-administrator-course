@@ -1,0 +1,33 @@
+ 1  kubectl get pdos
+    2  kubectl get pods
+    3  kubectl get rs
+    4  kubectl get rs
+    5  kubectl get pods
+    6  kubectl describe pod new-replica-set-ng87g 
+    7  kubectl get pods
+    8  kubectl delete pod new-replica-set-8j8jp 
+    9  kubectl get pods
+   10  ls
+   11  vi replicaset-definition-1.yaml 
+   12  kubectl apply -f replicaset-definition-1.yaml 
+   13  vi replicaset-definition-2.yaml 
+   14  kubectl apply -f replicaset-definition-2.yaml 
+   15  kubectl get rs
+   16  kubectl delete rs replicaset-1 replicaset-2 
+   17  ls
+   18  kubectl edit rs new-replica-set 
+   19  kubectl get rs
+   20  kubectl get pods
+   21  kubectl delete pods new-replica-set-wzpb8 new-replica-set-gpmgv new-replica-set-pqld8 new-replica-set-ng87g 
+   22  kubectl get pods
+   23  ls
+   24  vi sample.yaml 
+   25  kubectl edit rs new-replica-set 
+   26  kubectl get pods
+   27  kubectl scale rs new-replica-set --replicas=6
+   28  kubectl get pods
+   29  kubectl scale rs new-replica-set --replicas=5
+   30  kubectl get pods
+   31  kubectl scale --replicas=2 rs new-replica-set 
+   32  kubectl explain replicaset
+   33  history

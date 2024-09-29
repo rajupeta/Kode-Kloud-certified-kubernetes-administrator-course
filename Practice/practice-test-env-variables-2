@@ -1,0 +1,23 @@
+kubectl -n default get pods
+kubectl describe pod webapp-color 
+kubectl edit pod webapp-color 
+kubectl replace --force -f /tmp/kubectl-edit-2864414274.yaml
+kubectl -n default get cm
+kubectl -n default get cm
+kubectl describe cm db-config 
+kubectl create configmap --help
+kubectl create configmap webapp-config-map --from-literal= APP_COLOR=darkblue --from-literal=APP_OTHER=disregard --dry-run=client -o yaml > webapp-config.yaml
+kubectl create configmap webapp-config-map --from-literal=APP_COLOR=darkblue --from-literal=APP_OTHER=disregard --dry-run=client -o yaml > webapp-config.yaml
+cat webapp-config.yaml 
+kubectl create -f webapp-config.yaml 
+k describe cm webapp-config-map 
+kubectl edit pod webapp-color 
+cat /tmp/kubectl-edit-1648116135.yaml
+kubectl replace --force -f /tmp/kubectl-edit-1648116135.yaml
+vi /tmp/kubectl-edit-1648116135.yaml
+kubectl replace --force -f /tmp/kubectl-edit-1648116135.yaml
+kubectl describe pod webapp-color 
+kubectl get cm
+vi /tmp/kubectl-edit-1648116135.yaml
+kubectl describe cm webapp-config-map  
+history |cut -c 8-

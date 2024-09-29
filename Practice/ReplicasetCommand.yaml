@@ -1,0 +1,142 @@
+controlplane ~ ➜  history
+    1  kubectl get pods -n default
+    2  kubectl get replicasets.apps 
+    3  kubectl get replicasets
+    4  kubectl get rs
+    5  kubectl get rs
+    6  kubectl describe rs -o yaml
+    7  kubectl describe rs new-replica-set -o yaml
+    8  kubectl describe new-replica-set -o yaml
+    9  kubectl describe rs new-replica-set -o yaml
+   10  kubectl describe rs new-replica-set 
+   11  kubectl describe rs new-replica-set -o yaml
+   12  kubectl get rs
+   13  kubectl get pods
+   14  kubectl get rs new-replica-set -o yaml
+   15  kubectl get pods
+   16  kubectl describe rs new-replica-set 
+   17  kubectl describe pod new-replica-set-jdkph 
+   18  kubectl delete pod new-replica-set-jdkph 
+   19  kubectl get pods
+   20  ls
+   21  cat replicaset-definition-1.yaml 
+   22  vi replicaset.yaml
+   23  kubectl apply -f replicaset.yaml 
+   24  vi replicaset.yaml
+   25  kubectl apply -f replicaset.yaml 
+   26  vi replicaset.yaml
+   27  kubectl api-resources | grep replicaset
+   28  vi replicaset.yaml
+   29  kubectl api-resources | grep replicaset
+   30  kubectl apply -f replicaset.yaml 
+   31  vi replicaset.yaml
+   32  kubectl apply -f replicaset.yaml 
+   33  kubectl apply -f replicaset-definition-2.yaml 
+   34  vi replicaset-definition-2.yaml 
+   35  kubectl apply -f replicaset-definition-2.yaml 
+   36  kubectl delete rs replicaset-1 replicaset-2 
+   37  ls
+   38  kubectl get rs
+   39  kubectl edit rs new-replica-set 
+   40  kubectl get pods
+   41  kubectl delete pod new-replica-set-g6cg4 new-replica-set-rdlfd new-replica-set-967ss  new-replica-set-f5h2s 
+   42  kubectl get pods
+   43  kubectl scale replica=5 rs new-replica-set
+   44  kubectl scale replicas=5 rs new-replica-set
+   45  kubectl scale replicas:5 rs new-replica-set
+   46  kubectl scale rs new-replica-set --replicas=5
+   47  kubectl get pods
+   48  kubectl edit rs new-replica-set 
+   49  kubectl get pods
+   50  kubectl get rs new-replica-set 
+   51  kubectl get rs new-replica-set -o yaml
+   52  vi newbusybox.yaml
+   53  kubectl apply -f  newbusybox.yaml
+   54  vi newbusybox.yaml
+   55  kubectl apply -f  newbusybox.yaml
+   56  vi newbusybox.yaml
+   57  kubectl apply -f  newbusybox.yaml
+   58  kubectl get pods
+   59  kubectl get pods
+   60  kubectl describe pod busybox-pod1 
+   61  kubectl get pods
+   62  kubectl delete rs new-replica-set 
+   63  kubectl get pods
+   64  kubectl delete pod busybox-pod1 
+   65  kubectl get pods
+   66  kubectl get pods
+   67  kubectl get pods
+   68  kubectl get pods
+   69  kubectl apply -f  newbusybox.yaml
+   70  kubectl get pods
+   71  kubectl describe pod busybox-pod1 
+   72  vi newbusybox.yaml
+   73  kubectl logs busybox-pod1 -c busybox-container1
+   74  kubectl logs busybox-pod1 -c busybox-container1
+   75  vi newbusybox.yaml
+   76  kubectl get pods
+   77  kubectl delete pod busybox-pod1 
+   78  kubectl get pods
+   79  kubectl apply -f  newbusybox.yaml
+   80  kubectl get pods
+   81  kubectl delete pod busybox-pod1 
+   82  kubectl get pods
+   83  ls
+   84  kubectl apply -f newbusybox.yaml 
+   85  kubectl get pods
+   86  kubectl delete pod busybox-pod1 
+   87  cat replicaset-definition-1.yaml 
+   88  cat replicaset-definition-2.yaml 
+   89  vi rs.yaml
+   90  k apply -f rs.yaml
+   91  vi rs.yaml
+   92  k apply -f rs.yaml
+   93  k get pods
+   94  kubectl apply -f newbusybox.yaml 
+   95  k get pods
+   96  k delete pod new-replica-set-qn8rf 
+   97  k get pods
+   98  cat replicaset.yaml 
+   99  ls
+  100  cat newbusybox.yaml 
+  101  vi newbusybox.yaml 
+  102  kubectl apply -f newbusybox.yaml 
+  103  k get pods
+  104  vi newbusybox.yaml 
+  105  k delete pod busybox-pod
+  106  kubectl apply -f newbusybox.yaml 
+  107  k get pods
+  108  k delete rs new-replica-set 
+  109  k get pods
+  110  kubectl apply -f newbusybox.yaml 
+  111  vi newbusybox.yaml 
+  112  kubectl apply -f newbusybox.yaml 
+  113  k get pods
+  114  k delete pod busybox2
+  115  k delete pod busybox-pod1 
+  116  ls
+  117  cat replicaset.yaml 
+  118  ls
+  119  cat rs.yaml 
+  120  k apply -f rs.yaml 
+  121  k get pods
+  122  ls
+  123  k apply -f newbusybox.yaml 
+  124  k get pods
+  125  k get pods
+  126  k delete pod new-replica-set-tfnrz 
+  127  k apply -f newbusybox.yaml 
+  128  k get pods
+  129  k delete rs new-replica-set 
+  130  k apply -f newbusybox.yaml 
+  131  k get pods
+  132  k delete pod new-replica-set-tfnrz 
+  133  k apply -f rs.yaml 
+  134  k get pods
+  135  k ger rs
+  136  k get rs
+  137  k get pods rs
+  138  k get pods
+  139  k delete pod busybox2 
+  140  k get pods
+  141  history
